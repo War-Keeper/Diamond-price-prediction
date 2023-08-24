@@ -227,13 +227,13 @@ if st.button('Predict Price'):
 st.subheader('Results using StoneAlgo data')
 
 col4, col5, col6 = st.columns(3)
-col4.metric("Linear Reg", price_s[0], delta=None)
-col5.metric("KNN Reg", price_s[1], delta=None)
-col6.metric("XGBoost Reg", price_s[2], delta=None)
+col4.metric("Linear Reg", "{:.2f}".format(price_s[0]), delta=None)
+col5.metric("KNN Reg", "{:.2f}".format(price_s[1]), delta=None)
+col6.metric("XGBoost Reg", "{:.2f}".format(price_s[2]), delta=None)
 
 st.subheader('Results using DiamondSE data')
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Linear Reg", price_d[0], delta=None)
-col2.metric("KNN Reg", price_d[1], delta=None)
-col3.metric("XGBoost Reg", price_d[2], delta=None)
+col1.metric("Linear Reg", "{:.2f}".format(price_d[0]), delta=None)
+col2.metric("KNN Reg", "{:.2f}".format(price_d[1]), delta=None)
+col3.metric("XGBoost Reg", "{:.2f}".format(price_d[2]), delta=None)
