@@ -234,7 +234,7 @@ col7, col4, col1 = st.columns(3)
 if price_d[1] != 0:
     col7.metric("Overall Average", int((price_s[1] + price_s[2] + price_d[1] + price_d[2])/4), delta=None)
 else:
-   col7.metric("Average StoneAlgo", int((price_s[1] + price_s[2])/2), delta=None)
+   col7.metric("Overall Average", int((price_s[1] + price_s[2])/2), delta=None)
 
 col4.metric("Average StoneAlgo", int((price_s[1] + price_s[2])/2), delta=None)
 col1.metric("Average DiamondSE", int((price_d[1] + price_d[2])/2), delta=None)
@@ -243,12 +243,12 @@ st.subheader('Results using StoneAlgo data')
 
 col5, col6 = st.columns(2)
 
-col5.metric("KNN Reg", int(price_s[1]), delta=None)
-col6.metric("XGBoost Reg", int(price_s[2]), delta=None)
+col5.metric("KNN Regression", int(price_s[1]), delta=None)
+col6.metric("XGBoost Regression", int(price_s[2]), delta=None)
 
 st.subheader('Results using DiamondSE data')
 
 col2, col3 = st.columns(2)
 
-col2.metric("KNN Reg", int(price_d[1]), delta=None)
-col3.metric("XGBoost Reg", int(price_d[2]), delta=None)
+col2.metric("KNN Regression", int(price_d[1]), delta=None)
+col3.metric("XGBoost Regression", int(price_d[2]), delta=None)
