@@ -191,9 +191,9 @@ def predict_DiamondSE(shape, carat, cut, color, clarity, width, depth, x, y, z):
     
     return pred_linear, pred_knnr, pred_xgbr
 
-st.title('Diamond Price Predictor')
+st.title('Natural Diamond Price Predictor')
 st.image("""https://images.alphacoders.com/689/689045.jpg""")
-st.header('Enter the characteristics of the diamond:')
+st.header('Enter the characteristics of the Natural Diamond:')
 st.text('Either enter:   \nshape, carat, cut, color, clarity, polish, symmetry, fluorescence\n \
          or: \nshape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
 
@@ -225,7 +225,7 @@ if st.button('Predict Price'):
     if carat != 0.0:
         price_s = list(predict_StoneAlgo(shape, carat, cut, color, clarity, polish, symmetry, fluorescence))
 
-st.text("How to read the results:\n  The average price is given as well as the individual results ")
+st.text("How to read the results:\n    The average price is given as well as the individual results ")
 
 st.subheader('Average Result Price')
 
