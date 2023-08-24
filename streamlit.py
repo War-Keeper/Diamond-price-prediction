@@ -195,7 +195,7 @@ st.title('Diamond Price Predictor')
 st.image("""https://images.alphacoders.com/689/689045.jpg""")
 st.header('Enter the characteristics of the diamond:')
 st.text('Either enter:   \nshape, carat, cut, color, clarity, polish, symmetry, fluorescence\n \
-         or: \n                shape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
+         or: \nshape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
 
 st.text('If sufficient amount of information is not entered, \nthen preditions will NOT be accurate.')
 
@@ -225,16 +225,25 @@ if st.button('Predict Price'):
     if carat != 0.0:
         price_s = list(predict_StoneAlgo(shape, carat, cut, color, clarity, polish, symmetry, fluorescence))
 
+st.text("How to read the results:\n  The average price is given as well as the individual results ")
+
+st.subheader('Average Result Price')
+
+col7, col4, col1 = st.columns(3)
+col7.metric("Average StoneAlgo", int((price_s[1] + price_s[2] + price_d[1] + price_d[2])/4), delta=None)
+col4.metric("Average StoneAlgo", int((price_s[1] + price_s[2])/2), delta=None)
+col1.metric("Average DiamondSE", int((price_d[1] + price_d[2])/2), delta=None)
+
 st.subheader('Results using StoneAlgo data')
 
-col4, col5, col6 = st.columns(3)
-col4.metric("Linear Reg", int(price_s[0]), delta=None)
+col5, col6 = st.columns(2)
+
 col5.metric("KNN Reg", int(price_s[1]), delta=None)
 col6.metric("XGBoost Reg", int(price_s[2]), delta=None)
 
 st.subheader('Results using DiamondSE data')
 
-col1, col2, col3 = st.columns(3)
-col1.metric("Linear Reg", int(price_d[0]), delta=None)
+col2, col3 = st.columns(2)
+
 col2.metric("KNN Reg", int(price_d[1]), delta=None)
 col3.metric("XGBoost Reg", int(price_d[2]), delta=None)
