@@ -195,7 +195,7 @@ st.title('Natural Diamond Price Predictor')
 st.image("""https://images.alphacoders.com/689/689045.jpg""")
 st.header('Enter the characteristics of the Natural Diamond:')
 st.text('Either enter:   \nshape, carat, cut, color, clarity, polish, symmetry, fluorescence\n \
-         or: \nshape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
+         or: \nshape, carat, cut, color, clarity, table, depth, x, y, z \n or all of the info.')
 
 st.text('If sufficient amount of information is not entered, \nthen preditions will NOT be accurate.')
 
