@@ -194,8 +194,8 @@ def predict_DiamondSE(shape, carat, cut, color, clarity, width, depth, x, y, z):
 st.title('Diamond Price Predictor')
 st.image("""https://images.alphacoders.com/689/689045.jpg""")
 st.header('Enter the characteristics of the diamond:')
-st.text('Either enter:   shape, carat, cut, color, clarity, polish, symmetry, fluorescence\n \
-         or: shape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
+st.text('Either enter:   \nshape, carat, cut, color, clarity, polish, symmetry, fluorescence\n \
+         or: \n                shape, carat, cut, color, clarity, width, depth, x, y, z \n or all of the info.')
 
 st.text('If sufficient amount of information is not entered, \nthen preditions will NOT be accurate.')
 
