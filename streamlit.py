@@ -1,7 +1,6 @@
 import xgboost as xgb
 import streamlit as st
 import pandas as pd
-import sklearn
 import pickle
 
 #Loading up the Regression model we created
