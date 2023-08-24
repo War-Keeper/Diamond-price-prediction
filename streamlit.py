@@ -2,7 +2,7 @@ import xgboost as xgb
 import streamlit as st
 import pandas as pd
 import sklearn
-from pickle
+import pickle
 
 #Loading up the Regression model we created
 xgbr_D = xgb.XGBRegressor()
