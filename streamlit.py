@@ -230,7 +230,7 @@ st.text("How to read the results:\n  The average price is given as well as the i
 st.subheader('Average Result Price')
 
 col7, col4, col1 = st.columns(3)
-col7.metric("Average StoneAlgo", int((price_s[1] + price_s[2] + price_d[1] + price_d[2])/4), delta=None)
+col7.metric("Overall Average", int((price_s[1] + price_s[2] + price_d[1] + price_d[2])/4), delta=None)
 col4.metric("Average StoneAlgo", int((price_s[1] + price_s[2])/2), delta=None)
 col1.metric("Average DiamondSE", int((price_d[1] + price_d[2])/2), delta=None)
 
