@@ -200,7 +200,7 @@ st.text('Either enter:   shape, carat, cut, color, clarity, polish, symmetry, fl
 st.text('if not sufficient amount of information is entered, then preditions will NOT be accurate.')
 
 shape = st.selectbox('Shape:', ['Round', 'Cushion', 'Princess', 'Emerald', 'Oval', 'Pear', 'Marquise', 'Radiant', 'Heart', 'Asscher', 'CM'])
-carat = st.number_input('Carat Weight:', min_value=0, max_value=100.0, value=0)
+carat = st.number_input('Carat Weight:', min_value=0.0, max_value=100.0, value=0.0)
 cut = st.selectbox('Cut Rating:', ['Fair', 'Good', 'Very Good', 'Excellent', 'Ideal'])
 color = st.selectbox('Color Rating:', ['J', 'I', 'H', 'G', 'F', 'E', 'D'])
 clarity = st.selectbox('Clarity Rating:', ['I1', 'SI2', 'SI1', 'VS2', 'VS1', 'VVS2', 'VVS1', 'IF'])
@@ -208,18 +208,18 @@ polish = st.selectbox('Polish Rating:', ['Ideal', 'Excellent', 'Very Good', 'Goo
 symmetry = st.selectbox('Symmetry Rating:', ['Ideal', 'Excellent', 'Very Good', 'Good', 'Fair', 'Poor'])
 fluorescence = st.selectbox('fluorescence Rating:', ['None','Faint','Medium','Strong','Very Slight','Very Strong','Slight','Medium Blue','Strong Blue','Very Strong Blue','Medium White'])
 
-depth = st.number_input('Diamond Depth Percentage:', min_value=0, max_value=100.0, value=0)
-width = st.number_input('Diamond Table Percentage:', min_value=0, max_value=100.0, value=0)
-x = st.number_input('Diamond Length (X) in mm:', min_value=0, max_value=100.0, value=0)
-y = st.number_input('Diamond Width (Y) in mm:', min_value=0, max_value=100.0, value=0)
-z = st.number_input('Diamond Height (Z) in mm:', min_value=0, max_value=100.0, value=0)
+depth = st.number_input('Diamond Depth Percentage:', min_value=0.0, max_value=100.0, value=0.0)
+width = st.number_input('Diamond Table Percentage:', min_value=0.0, max_value=100.0, value=0.0)
+x = st.number_input('Diamond Length (X) in mm:', min_value=0.0, max_value=100.0, value=0.0)
+y = st.number_input('Diamond Width (Y) in mm:', min_value=0.0, max_value=100.0, value=0.0)
+z = st.number_input('Diamond Height (Z) in mm:', min_value=0.0, max_value=100.0, value=0.0)
 
 price_d = [0, 0, 0]
 price_s = [0, 0, 0]
 
 if st.button('Predict Price'):
 
-    if depth != 0 and width != 0 and x != 0 and y != 0 and z != 0 and carat!= 0 and cut!= 0 :
+    if depth != 0.0 and width != 0.0 and x != 0.0 and y != 0.0 and z != 0.0 and carat!= 0.0 and cut!= 0.0 :
         price_d = list(predict_DiamondSE(shape, carat, cut, color, clarity, width, depth, x, y, z))
 
     price_s = list(predict_StoneAlgo(shape, carat, cut, color, clarity, polish, symmetry, fluorescence))
