@@ -239,14 +239,14 @@ else:
 col4.metric("Average StoneAlgo", int((price_s[1] + price_s[2])/2), delta=None)
 col1.metric("Average DiamondSE", int((price_d[1] + price_d[2])/2), delta=None)
 
-st.subheader('Results using StoneAlgo data')
+st.subheader('Price using StoneAlgo data')
 
 col5, col6 = st.columns(2)
 
 col5.metric("KNN Regression", int(price_s[1]), delta=None)
 col6.metric("XGBoost Regression", int(price_s[2]), delta=None)
 
-st.subheader('Results using DiamondSE data')
+st.subheader('Price using DiamondSE data')
 
 col2, col3 = st.columns(2)
 
