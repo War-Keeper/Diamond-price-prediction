@@ -3,6 +3,6 @@ pandas
 scikit-learn
 matplotlib
 seaborn
-xgboost
+xgboost== 1.7.3
 joblib
 streamlit
