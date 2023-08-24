@@ -2,7 +2,7 @@ import xgboost as xgb
 import streamlit as st
 import pandas as pd
 import sklearn
-from joblib import dump, load
+from pickle
 
 #Loading up the Regression model we created
 xgbr_D = xgb.XGBRegressor()
@@ -10,10 +10,19 @@ xgbr_S = xgb.XGBRegressor()
 xgbr_D.load_model('xgbr_DiamondSE.json')
 xgbr_S.load_model('xgbr_StoneAlgo.json')
 
-linear_D = load('linear_DiamondSE.joblib') 
-linear_S = load('linear_StoneAlgo.joblib') 
-knnr_D = load('knnr_DiamondSE.joblib') 
-knnr_S = load('knnr_StoneAlgo.joblib') 
+linear_D = 0
+linear_S = 0 
+knnr_D = 0
+knnr_S = 0
+
+with open('linear_DiamondSE.pkl', 'rb') as f:
+  linear_D = pickle.load(f)
+with open('linear_StoneAlgo.pkl', 'rb') as f:
+  linear_S = pickle.load(f)
+with open('knnr_DiamondSE.pkl', 'rb') as f:
+  knnr_D = pickle.load(f)
+with open('knnr_StoneAlgo.pkl', 'rb') as f:
+  knnr_S = pickle.load(f)
 
 #Caching the model for faster loading
 @st.cache
